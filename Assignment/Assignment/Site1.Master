@@ -1,0 +1,50 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Assignment.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+    <link href="Style.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="topPanel">
+        <h1>Security in Asp.Net</h1>
+        <table>
+            <tr>
+                <td><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Secure/Home.aspx">Home</asp:HyperLink></td>
+                <td><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Secure/About.aspx">About</asp:HyperLink></td>
+                <td><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Secure/Contact.aspx">Contact</asp:HyperLink></td>
+                <td><asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Login.aspx">Login</asp:HyperLink></td>
+                  <td><asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/NewAccount.aspx">NewAccount</asp:HyperLink></td>
+                
+            </tr>
+            <tr>
+                <td colspan="5">
+                    <asp:LoginView ID="LoginView" runat="server">
+                         <AnonymousTemplate>
+                             welcome Guest
+                         </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            Hi!!                 <asp:LoginView ID="LoginName1" runat="server"/>
+                        </LoggedInTemplate>
+
+                    </asp:LoginView>
+                       
+                </td>
+            </tr>
+        </table>
+            </div>
+        <div class="mainPanel">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
